@@ -1,0 +1,252 @@
+1.Watch the Todays Lecture again.- done
+---------------------------------------------------------------------------------------------------------------------
+2.  Research about How API Works
+What Is an API?
+API stands for Application Programming Interface.
+It’s like a messenger that allows different software systems (apps, servers, devices) to talk to each other.
+________________________________________
+🚦 Real-Life Analogy:
+Imagine you're at a restaurant:
+•	You are the user/client.
+•	The kitchen is the server.
+•	The waiter is the API.
+You (the client) don’t go into the kitchen—you tell the waiter (API) what you want (e.g., "one burger").
+The waiter takes your request to the kitchen and brings the food back.
+You don’t care how the kitchen made it—you just get what you asked for.
+________________________________________
+How an API Works (Step by Step)
+1. Client Makes a Request
+    A client (web browser, mobile app, etc.) sends a request to the API.
+	The request includes:
+	A URL (the endpoint)
+	A method (like GET, POST)
+	Sometimes data (like login info)
+	Headers (e.g., for authentication)
+
+________________________________________
+2. API Receives the Request
+•	The API receives the request and processes it.
+•	It might:
+o	Query a database
+o	Talk to another service
+o	Apply logic
+________________________________________
+3. API Sends a Response
+•	After processing, the API returns a response to the client.
+•	The response usually includes:
+o	A status code (200 OK, 404 Not Found, etc.)
+o	Data (usually in JSON or XML)
+
+________________________________________
+Common API Types
+Type	Description	Example
+REST	Web-based, uses HTTP methods	GET /users/1
+SOAP	XML-based, older enterprise APIs	Used in banks, legacy systems
+GraphQL	Flexible query API from Facebook	Get exactly what you need
+gRPC	High-performance binary API	Used in microservices
+WebSocket	Real-time two-way communication	Chat apps, live updates
+________________________________________
+What About Security?
+APIs usually require authentication, such as:
+•	API keys
+•	OAuth tokens
+•	JWTs (JSON Web Tokens)
+This ensures only authorized clients can access or modify data.
+________________________________________
+Example Use Cases
+•	Weather app fetching forecast
+•	Payment system sending transaction
+•	Mobile app logging in a user
+•	Smartwatch syncing health data
+________________________________________
+TL;DR
+An API is a bridge that lets different software talk to each other.
+You (the client) ask for something, and the API delivers it from the server—clean, structured, and secure.
+----------------------------------------------------------------------------------------------------------
+3. what happen when you type google.com in browser and how you see the google page and every time you type gogole.com in the browser then always same process happen?
+Step-by-Step: What Happens When You Type google.com in Your Browser
+1. You Type the URL
+You type https://www.google.com into the browser address bar and press Enter.
+________________________________________
+2. Browser Checks Cache
+Before reaching out to the internet, the browser checks:
+•	Browser cache
+•	Operating system DNS cache
+•	Router cache
+•	ISP cache
+If it finds google.com's IP address cached, it skips to Step 5. If not, it moves to DNS resolution.
+________________________________________
+3. DNS Lookup (Domain to IP)
+Your computer contacts a DNS server (Domain Name System) to find the IP address for google.com.
+Example: google.com might resolve to 142.250.190.78.
+DNS process may go through:
+1.	Local cache
+2.	ISP’s DNS
+3.	Root DNS → .com server → google.com name server
+________________________________________
+4. Browser Establishes a TCP Connection
+Now that the browser has the IP address, it:
+•	Opens a TCP connection to the Google server (using IP address and port 443 for HTTPS)
+•	Uses the TLS/SSL handshake to set up a secure HTTPS connection
+________________________________________
+5. Browser Sends HTTP Request
+Once the secure connection is ready, the browser sends:
+
+This is an HTTP request asking for the homepage.
+________________________________________
+6. Google's Servers Process the Request
+Google's servers:
+•	Receive the request
+•	Check the domain, user-agent, cookies, etc.
+•	Generate the homepage HTML
+•	May also include JavaScript, CSS, images, etc.
+________________________________________
+7. Server Sends Back a Response
+Google sends a response like:
+
+followed by the HTML of the homepage.
+________________________________________
+8. Browser Renders the Page
+The browser:
+•	Parses the HTML
+•	Downloads linked files (CSS, JS, images, fonts)
+•	Renders the layout
+•	Runs JavaScript
+•	Displays the Google homepage
+________________________________________
+9. Additional Requests (For Images, Ads, etc.)
+The browser may make additional requests to load:
+•	Logos
+•	Fonts
+•	Google services (like search suggestions)
+Each of these is another small HTTP request.
+________________________________________
+ Does This Happen Every Time?
+Mostly yes, BUT with some optimization:
+What’s Cached?
+•	DNS result (IP address)
+•	Static resources (images, CSS, JS files)
+•	Browser may reuse the TCP connection (via HTTP keep-alive or HTTP/2)
+So, while the full process happens the first time, later visits may skip some steps (especially DNS and file downloads), making it faster.
+________________________________________
+Summary Table
+Step	Action
+1	You type google.com
+2	Browser checks cache
+3	DNS resolves domain to IP
+4	TCP + TLS connection established
+5	Browser sends HTTP GET request
+6	Server processes and responds
+7	Browser receives and renders page
+8	Page appears with interactive features
+---------------------------------------------------------------------------------------
+4.  How many Protocols are there for API/Network. –
+There are many protocols used in API and network communication, depending on the layer of the network stack and the type of interaction. Here’s a categorized breakdown of the most common protocols used for APIs and networking, grouped by purpose or OSI model layer:
+1.	Application Layer Protocols (used directly by APIs)
+These are most relevant to APIs and web services:
+Protocol	Purpose
+HTTP/HTTPS	Most common for RESTful APIs
+WebSocket (WS/WSS)	Real-time, bidirectional communication
+gRPC	High-performance RPC protocol by Google (uses HTTP/2)
+SOAP	XML-based protocol, used in older or enterprise APIs
+MQTT	Lightweight messaging protocol for IoT
+AMQP	Advanced Message Queuing Protocol (used with RabbitMQ, etc.)
+CoAP	Constrained Application Protocol (IoT and low-bandwidth)
+FTP/SFTP	File transfer protocols (not typical for APIs, but used in integrations)
+GraphQL	Not a protocol itself, but runs over HTTP/WebSocket
+2. Transport Layer Protocols
+These provide data transport services for application layer protocols:
+Protocol	Purpose
+TCP	Reliable, ordered data transmission (used by HTTP, FTP, etc.)
+UDP	Fast but unreliable (used by DNS, streaming, VoIP, etc.)
+QUIC	Fast, secure protocol developed by Google (used by HTTP/3)
+3. Network Layer Protocols
+Handles data routing and addressing:
+Protocol	Purpose
+IP (IPv4/IPv6)	Core Internet protocol for routing packets
+4. Lower-Level Protocols (for completeness)
+These are not directly used by APIs but are critical to network infrastructure:
+Protocol	Purpose
+ARP	Maps IP addresses to MAC addresses
+ICMP	Diagnostics (e.g., ping)
+DNS	Resolves domain names to IP addresses
+DHCP	Assigns IP addresses to devices
+TLS/SSL	Encrypts data for HTTPS, FTPS, etc.
+Total Number
+If counting all categories and variants, there are over 30+ common network-related protocols, but in terms of those used directly in APIs, the key ones are:
+•	HTTP/HTTPS
+•	WebSocket
+•	gRPC
+•	SOAP
+•	MQTT
+•	AMQP
+•	CoAP
+•	FTP/SFTP
+---------------------------------------------------------------------------------------------------------------------
+5. what is the full form of API.
+	Application program Interface
+-------------------------------------------------------------------------------------------------------------------
+6. Full form of URL.
+	Uniform Resource Locator
+----------------------------------------------------------------------------------------------------
+7. what is the max length of the URL?
+The maximum length of a URL depends on the context (such as the browser or server), but here are the general rules:
+1. Browsers
+•	Internet Explorer (IE): The maximum URL length is 2,083 characters.
+•	Modern browsers (like Chrome, Firefox, Safari): Generally support URLs up to 32,768 characters or more, but this can vary.
+2. Web Servers
+•	Apache: By default, limits request line (including URL) to 8,192 bytes, but this is configurable.
+•	Nginx: Default limit is 4,096 bytes for the request line, also configurable.
+•	IIS (Microsoft): Has a limit of 16,384 characters by default.
+3. Practical Recommendation
+•	Keep URLs under 2,000 characters for maximum compatibility across browsers and servers.
+•	For URLs in GET requests, anything over 2,048 characters can be problematic depending on the environment.
+4. RFC 3986 (Standard)
+•	Technically, there is no defined limit in the specification, but implementations impose their own limits.
+---------------------------------------------------------------------------------------------------------------------
+8. How or when the IP address update of our mobile or laptop device (optional extra point)
+mobile or laptop’s IP address can change (or update) depending on where, how, and when you connect to a network. Here's a clear explanation of how and when your IP address updates:
+1. When You Change Networks
+Whenever you connect to a new Wi-Fi or mobile network, you’re assigned a new IP address:
+•	At home → You get a local IP from your router (e.g., 192.168.x.x) and a public IP from your ISP.
+•	At a café or public Wi-Fi → You get a different local IP from that network.
+•	Using mobile data → Your mobile carrier gives you a different (public or NATed) IP.
+ IP updates:
+•	Instantly upon connecting to the new network.
+________________________________________
+2. When DHCP Lease Expires (on Wi-Fi)
+•	Your device gets an IP address from a DHCP server (usually your router).
+•	This address is only leased temporarily (e.g., for 24 hours).
+•	After the lease ends, the IP might be renewed or changed.
+IP updates:
+•	When DHCP lease expires and a new IP is assigned.
+•	You can also force renewal by:
+o	Windows: ipconfig /release then ipconfig /renew
+o	macOS/Linux: sudo dhclient -r then sudo dhclient
+________________________________________
+3. When Switching Between Mobile Data and Wi-Fi
+•	Mobile data and Wi-Fi have separate IPs.
+•	Switching between them instantly changes your IP address.
+________________________________________
+4. Restarting Your Router (Sometimes)
+Restarting a home router or modem may cause your external/public IP to change (if your ISP uses dynamic IPs). But some ISPs give you a static IP which doesn't change.
+________________________________________
+5. Using VPNs or Proxies
+A VPN gives your device a completely different IP (usually from another location or country).
+•	Disconnecting the VPN will revert to your regular IP.
+________________________________________
+6. Manually Changing IP
+You can manually configure a different local IP (e.g., 192.168.1.55) in:
+•	Wi-Fi settings → Advanced → Static IP (on mobile or laptop)
+•	Network settings in Control Panel or macOS preferences
+________________________________________
+Summary Table
+Scenario	IP Change?	How?
+Switching Wi-Fi networks	✅	New DHCP IP from new router
+Mobile Data On/Off	✅	IP from mobile carrier
+DHCP Lease Expired	✅	May renew or change IP
+Restarting Router	❓	Sometimes changes public IP
+VPN On/Off	✅	Changes to VPN-assigned IP
+Manually Set IP	✅	Changes local IP only
+
+

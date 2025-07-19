@@ -1,0 +1,219 @@
+What is JSON? Explain its purpose.
+JSON is a text-based format for representing structured data.
+It is derived from the JavaScript programming language, but it's language-independent,
+meaning it's used widely across many programming languages, including Python, Java, C#, and more.
+
+🎯 Purpose of JSON
+The main purpose of JSON is to transmit data between a server and a client. It is commonly used in web applications to:
+1. Send data from a server to a web page (e.g., retrieving user information from a database).
+2. Store configuration data (e.g., in .json files for applications).
+3. Exchange data between programs or systems in a standardized way (e.g., in APIs).
+
+🔧 Basic Structure
+A JSON object is made up of key-value pairs, similar to a Python dictionary or an object in JavaScript.
+json
+{
+  "name": "Alice",
+  "age": 30,
+  "isStudent": false
+}
+-Keys are strings
+-Values can be strings, numbers, booleans, arrays, objects, or null
+
+✅ Why JSON is Popular
+-Lightweight and efficient
+-Readable and easy to write
+-Language-independent
+-Widely supported in modern programming environments
+--------------------------------------------------------------------------------------------------------------------------
+Which data types are supported in JSON? List all.
+JSON supports six fundamental data types. Here’s a complete list:
+1. String
+* Text data enclosed in double quotes (")
+    Example: "name": "Alice"
+
+2. Number
+* Integer or floating-point (no quotes)
+    Example: "age": 25,"height": 5.9
+
+3. Boolean
+* Represents logical values: true or false (no quotes)
+    Example: "isStudent": false
+
+4. Null
+* Represents an empty or null value (no quotes)
+    Example: "middleName": null
+
+5. Object
+* A collection of key-value pairs (like a dictionary)
+* Enclosed in curly braces {}
+    Example:
+json
+  {
+    "name": "Alice",
+    "address": {
+      "city": "New York",
+      "zip": "10001"
+    }
+  }
+
+6. Array
+* An ordered list of values (can include any JSON data type)
+* Enclosed in square brackets []
+    Example: "skills": ["JavaScript", "Python", "HTML"]
+
+ ✅ Summary Table
+
+| Data Type | Example                         |
+| --------- | ------------------------------- |
+| String    | "name": "Alice"                 |
+| Number    | "age": 30                       |
+| Boolean   | "isStudent": true               |
+| Null      | "middleName": null              |
+| Object    | "address": { "city": "Boston" } |
+| Array     | "scores": [95, 88, 76]          |
+
+------------------------------------------------------------------------------------------------------------------------
+What is the correct JSON format? Give an example.
+✅ Correct JSON Format
+The correct JSON format is:
+* Data is in key/value pairs
+* Keys are strings, enclosed in double quotes " "
+* Values can be:
+    String
+    Number
+    Boolean
+    Null
+    Object
+    Array
+* Each key/value pair is separated by a comma
+* Objects are enclosed in curly braces {}
+* Arrays are enclosed in square brackets []
+
+Example:
+{
+  "name": "John Doe",
+  "age": 28,
+  "isStudent": false,
+  "email": "john.doe@example.com",
+  "courses": ["Math", "Science", "History"],
+  "address": {
+    "street": "123 Main St",
+    "city": "New York",
+    "zip": "10001"
+  },
+  "graduationYear": null
+}
+
+❌ Common Mistakes to Avoid:
+* Using single quotes ' instead of double quotes " (invalid)
+
+* Missing commas between key-value pairs
+
+* Trailing commas (e.g., a comma after the last item in an object or array)
+
+* Using undefined or function values (not allowed in JSON)
+------------------------------------------------------------------------------------------------------------------------
+What is the difference between a JSON object and a JSON array? Give examples.
+🆚 Difference Between a JSON Object and a JSON Array
+    Feature     	JSON Object	                                JSON Array
+    Structure	    Unordered collection of key/value pairs	    Ordered list of values
+    Syntax	        Enclosed in curly braces {}	                Enclosed in square brackets []
+    Access	        Accessed using keys	                        Accessed using index numbers
+    Purpose	        Represents a single item with properties    Represents a list or collection of items
+
+JSON Object example:
+{
+"name": "Pallavi",
+"age" : 30,
+"isStudent" : true
+}
+
+JSON Array example
+["Java", "API", "Selenium", 100, true]
+------------------------------------------------------------------------------------------------------------------------
+How do we represent null in JSON? Give an example.
+In JSON, the null value is used to represent empty, missing, or unknown data. It is written simply as:
+null
+
+⚠️ No quotes — "null" (with quotes) would be treated as a string, not a null value.
+
+Example of JSON with null
+
+json
+{
+  "name": "Jane",
+  "age": null,
+  "email": "jane.doe@example.com",
+  "isEmployed": null
+}
+
+* "age" and "isEmployed" have values of null, meaning their actual values are not currently known or not provided.
+
+Use Case
+
+You typically use null when:
+
+* A value is optional
+* A field is waiting to be updated
+* A value was deleted or reset
+------------------------------------------------------------------------------------------------------------------------
+Does JSON allow comments? Explain why.
+No, JSON does not allow comments.
+JSON strictly disallows comments. This is by design, based on its goal of being a lightweight and language-independent
+data format that's easy to parse by machines.
+
+⚙️ Why Comments Are Not Allowed:
+* Simplicity: JSON is meant to be minimal and easy to parse, especially by machines. Allowing comments would
+             complicate parsers.
+* Data, Not Code: JSON is purely a data format, not a programming language. Its job is to carry data, not
+                    explanations or instructions.
+* Interoperability: JSON must behave consistently across all platforms and languages. Comments would increase
+                    the risk of parser differences and errors.
+
+📌 Example (❌ Invalid JSON with a comment):
+json
+{
+  "name": "Alice", // This is the user's name
+  "age": 30
+}
+This would fail to parse in any strict JSON parser.
+
+✅ Alternative: Use a metadata field if needed:
+json
+{
+  "name": "Alice",
+  "_comment": "This is the user's name",
+  "age": 30
+}
+While _comment is not standard, it can be used by agreement in your app—just avoid it for public APIs.
+------------------------------------------------------------------------------------------------------------------------
+What is the default character encoding for JSON?
+ According to the JSON Specification (RFC 8259):
+"JSON text SHALL be encoded in UTF-8, UTF-16, or UTF-32, but the default encoding is UTF-8."
+
+However, UTF-8 is the most widely used and recommended because:
+* It’s compact
+* Backward-compatible with ASCII
+* Efficient for English and many other languages
+* Universally supported in modern systems
+
+✅ Practical Implication
+When sending or receiving JSON data (e.g., in HTTP), unless specified otherwise in the headers:
+The encoding is assumed to be UTF-8
+Example HTTP header:
+pgsql
+Content-Type: application/json; charset=utf-8
+------------------------------------------------------------------------------------------------------------------------
+Convert this data into JSON format:
+
+Name: Pramod
+Age: 25
+Skills: Java, API
+
+json
+{
+"name": "Promod",
+"age": 25,
+"skills": ["Java", "API"]
+}

@@ -1,0 +1,279 @@
+1.	Learn about what is a microservice.
+A microservice is a small, independent service that does one thing well.
+It works with other microservices to build a large, scalable, and flexible system.
+Microservice = A small, focused piece of a big system.
+Imagine an app like Amazon. Instead of one big program that handles everything (search, payments, cart, user accounts), it's broken into independent services:
+•	Search Service
+•	Payment Service
+•	User Service
+•	Cart Service
+•	Shipping Service
+Each microservice is:
+•	Built and deployed independently
+•	Communicates via APIs (usually HTTP, gRPC, or messaging queues)
+•	Owned by a separate team
+•	Loosely coupled and highly cohesive
+Key Characteristics of Microservices
+Characteristic	Description
+✅ Independently Deployable	You can update one service without touching others
+✅ Single Responsibility	Each service does one thing well
+✅ Technology-Agnostic	Services can use different languages or databases
+✅ Scalable	Scale only the services that need it (e.g., search)
+✅ Resilient	Failure in one service doesn’t crash the whole app
+✅ API-Based Communication	Services talk over REST, gRPC, messaging, etc.
+How They Communicate
+Microservices typically use:
+•	REST APIs / HTTP
+•	gRPC
+•	Message brokers like Kafka, RabbitMQ
+•	Event-driven communication
+How They Communicate
+Microservices typically use:
+•	REST APIs / HTTP
+•	gRPC
+•	Message brokers like Kafka, RabbitMQ
+•	Event-driven communication
+-----------------------------------------------------------------------------------------------------------
+2.	About what is a web service.
+A web service is a software system that allows two machines or applications to communicate over the web (usually the Internet) using standard protocols like HTTP.
+Or
+A web service is a way for two devices or apps to talk to each other over the internet using standard web protocols like HTTP and data formats like JSON or XML.
+A web service is like a middleman that lets different apps talk to each other using the internet.
+For example:
+•	Your weather app calls a weather web service to get today's forecast.
+•	An online store may use a payment gateway web service to process credit cards.
+
+Key Features of a Web Service:
+Feature	Description
+📡 Accessible via Web	Uses HTTP/HTTPS for communication
+💬 Uses Standard Formats	Data is exchanged in XML or JSON
+🔁 Machine-to-Machine	Built for system-to-system communication
+🌐 Language-Independent	Works across different programming languages
+
+Common Types of Web Services
+Type	Description	Example
+SOAP	XML-based, strict rules, enterprise use	Banking systems
+REST	Lightweight, uses HTTP verbs, JSON or XML	Most modern APIs
+XML-RPC / JSON-RPC	Remote procedure calls using XML/JSON	Older web apps
+
+How a Web Service Works (Basic Flow):
+1.	Client (App) sends a request to the Web Service (URL).
+2.	The Web Service processes the request (e.g., gets data from a database).
+3.	It returns a response (usually in JSON or XML) to the client.
+
+
+Web Service vs API
+Aspect	Web Service	API
+Access	Over a network (usually HTTP)	Broader term (includes web services)
+Format	XML/JSON (SOAP or REST)	Any format or protocol
+Scope	A type of API that runs on the web	Includes libraries, SDKs, web services
+🧠 All web services are APIs, but not all APIs are web services.
+
+
+3.	What is Cookies?
+Cookies are small pieces of data that a website stores in your browser to remember information about you or your visit.
+Or
+A cookie is like a note a website gives to your browser to remember who you are and what you did last time.
+Why Are Cookies Used?
+Purpose	Example
+🔐 Authentication	Keep you logged in without asking for your password every time
+🛒 Session tracking	Remember items in your shopping cart
+🎯 Personalization	Save preferences like language or theme
+📊 Analytics & Ads	Track user behavior for stats or targeted ads
+How Cookies Work (Step by Step):
+1.	You visit a website (e.g., amazon.com).
+2.	The site sends a cookie to your browser with data (like session_id=abc123).
+3.	Your browser stores it.
+4.	On future visits, your browser sends that cookie back with every request to that site.
+5.	The server reads it to identify you or retrieve your preferences.
+
+Types of Cookies
+Type	Description
+Session Cookie	Temporary, deleted when you close your browser
+Persistent Cookie	Stays until expiration date (or manually deleted)
+Secure Cookie	Only sent over HTTPS
+HttpOnly Cookie	Not accessible via JavaScript (helps prevent XSS)
+Third-party Cookie	Set by other domains (often for ads or tracking)
+
+Are Cookies Bad?
+Not always! But they can be misused:
+•	For tracking across websites (by advertisers)
+•	For data collection without consent
+That's why laws like GDPR and CCPA require websites to get your cookie consent.
+Cookies are small data files stored in your browser by websites to remember things like login status, preferences, and activities.
+---------------------------------------------------------------------------------------------------------------
+4.	What is Server?
+A server is a computer or system that provides data, services, or resources to other computers—called clients—over a network.
+How It Works:
+1.	A client (like your browser or app) sends a request.
+2.	The server receives it, processes it, and sends a response back.
+For example:
+•	You type google.com
+•	Your browser (client) sends a request
+•	Google's web server sends back the web page
+ Types of Servers
+Server Type	What It Does	Example
+🌐 Web Server	Serves websites	Apache, Nginx
+🗃️ File Server	Stores and shares files	Dropbox, NAS devices
+🛠️ Application Server	Runs app logic	Node.js, Tomcat
+🧠 Database Server	Stores and processes data	MySQL, MongoDB
+✉️ Mail Server	Sends and receives emails	Microsoft Exchange
+🕹️ Game Server	Hosts multiplayer games	Fortnite server
+📡 Proxy Server	Acts as an intermediary	VPNs, corporate firewalls
+Server in a Network
+Servers can live:
+•	On the Internet (public servers like Google)
+•	On a local network (private servers for businesses)
+•	In the cloud (AWS, Azure, etc.)
+A server is a computer or system that responds to requests and provides services like websites, data, files, or emails to clients over a network.
+-----------------------------------------------------------------------------------------------------
+5.	What is LocalHost
+Localhost refers to your own computer—it's a special network address used to communicate with yourself.
+•	IP Address of localhost: 127.0.0.1
+•	Hostname: localhost
+In Simple Terms:
+Think of localhost as saying:
+"Talk to myself on my own machine."
+So, when you type http://localhost into your browser, you're asking your computer to connect to a server running on itself.
+What Is It Used For?
+Use Case	Example
+🔧 Web development	Run and test websites locally before deploying online
+🛠️ Software testing	Run apps without internet connection
+🗂️ Database hosting	Access a local MySQL/PostgreSQL database
+🧪 API testing	Test REST or GraphQL APIs in development
+Localhost = Loopback Address
+•	127.0.0.1 is the standard IPv4 address for localhost.
+•	It’s called a loopback address because it loops back to your own machine.
+Localhost is your own computer. It’s used to run and test apps locally without needing the interne
+6.	What is Domain?
+A domain is the human-friendly name used to access websites on the internet.
+It’s what you type into your browser to go to a site, like: google.com , facebook.com , openai.com
+Instead of typing an IP address (like 142.250.190.78), you use a domain name (like google.com)—which is easier to remember.
+ Domain = web address
+Ex: https://www.example.com
+
+This domain is linked to a server IP address using something called DNS (Domain Name System), so you can reach the correct website.
+Parts of a Domain
+Let's look at this domain:
+www.openai.com
+Part	Name	Description
+www	Subdomain	Optional; indicates the specific part of the site
+openai	Second-Level Domain (SLD)	Main name of the website
+.com	Top-Level Domain (TLD)	Type of website or organization (.com, .org, .net, etc.)
+Common Top-Level Domains (TLDs)
+TLD	Meaning
+.com	Commercial/business sites
+.org	Organizations/non-profits
+.net	Networks/services
+.edu	Education (schools, universities)
+.gov	Government sites
+.io, .ai	Tech startups and services
+Why Domains Are Important
+•	Easier for humans to remember than IP addresses
+•	Essential for building a brand or website
+•	Used for email addresses too (e.g., user@example.com)
+How Domains Work (Simple Flow)
+1.	You type example.com into your browser.
+2.	Your browser uses DNS to find the IP address for that domain.
+3.	It connects to the server at that IP.
+4.	The website loads.
+A domain is a website’s name (like google.com) that points to a server’s IP address, making it easy to find and access websites online.
+------------------------------------------------------------------------------------------------------
+7.	what is Endpoint in the URL?
+An endpoint is the specific part of a URL that refers to a particular resource or function in a web service or API.
+
+Endpoints Are Used in APIs (Especially REST APIs)
+HTTP Method	Endpoint	What It Does
+GET	/users	Get all users
+GET	/users/5	Get user with ID 5
+POST	/users	Create a new user
+PUT	/users/5	Update user with ID 5
+DELETE	/users/5	Delete user with ID 5
+Each of these is a different endpoint, even if they share the same base path.
+An endpoint is the path in a URL that targets a specific resource or action on a server, usually used in APIs.
+----------------------------------------------------------------------------------
+8.	What is the Difference between HTTP and HTTPS?
+Feature	HTTP	HTTPS
+🔒 Security	❌ Not secure	✅ Secure (uses encryption)
+🔐 Encryption	❌ None — data is sent in plain text	✅ Data is encrypted using SSL/TLS
+🆔 URL Prefix	http://	https://
+🔏 Uses Certificate?	❌ No	✅ Yes (SSL/TLS certificate required)
+✅ Trust Indicator	❌ Often marked "Not secure"	✅ Shows a padlock icon in browser
+🔁 Port Used	Port 80	Port 443
+🧪 Use Case	OK for public/non-sensitive info	Required for login, payments, etc.
+Why HTTPS Is Better:
+•	Protects sensitive info (like passwords, credit cards)
+•	Prevents man-in-the-middle attacks
+•	Improves SEO ranking (Google prefers HTTPS)
+•	Builds user trust with the padlock icon in the address bar
+HTTP is basic and not secure.
+HTTPS is secure, encrypted, and the standard for modern websites
+-----------------------------------------------------------------------------------------------------------
+
+9.	What is CRUD? and which methods are used for this and give some details about those methods.
+CRUD stands for the four basic operations used to manage data in databases or web applications, Rest APIs:
+C – create – POST method to create new data
+R – read – GET method to retrieve data
+U – update – PUT  method to update/replaces entire resource & PATCH method to update partial        resource
+D – Delete  - DELETE method to delete resource on the server
+
+CRUD stands for Create, Read, Update, Delete — the 4 main ways we interact with data.
+In REST APIs, CRUD is handled using HTTP methods: POST, GET, PUT/PATCH, and DELETE.
+---------------------------------------------------------------------------------------------------------------
+10.	What is Payload, Header, Status code?
+The payload is the actual data sent in the body of an HTTP request or response.
+Headers are key-value pairs that carry metadata about the HTTP request or response.
+They provide instructions or information like:
+•	What kind of data is being sent (Content-Type)
+•	Authorization tokens
+•	Cache settings
+•	Language preferences
+Headers do not contain the main data—they describe it.
+A status code is a 3-digit number sent in the HTTP response that tells you the result of your request.
+
+
+------------------------------------------------------------------------------------
+11.	What is Load Balancer? (Research about this)
+A Load Balancer is a system that distributes incoming network traffic across multiple servers to ensure:
+•	No single server is overloaded
+•	Faster performance
+•	Higher availability and reliability
+
+
+How It Works (Basic Flow)
+1.	A user sends a request (e.g., visiting a website).
+2.	The load balancer receives the request first.
+3.	It checks which server is available and least busy.
+4.	It forwards the request to that server.
+5.	The server processes it and sends back the response.
+A Load Balancer is like a traffic manager that spreads user requests across multiple servers so no one server gets overwhelmed, ensuring speed, reliability, and uptime.
+12.	What is Client and Server?
+A client is a device or application that sends a request to another machine (the server) to get some data or service
+Examples:
+•	Your web browser (Chrome, Firefox)
+•	A mobile app (like Instagram)
+•	Postman (API testing tool)
+When you type google.com, your browser (client) sends a request to Google's server to load the page.
+What is a Server?
+A server is a computer or system that receives requests from clients and sends back responses.
+It stores and provides:
+•	Web pages
+•	Data
+•	Services (like login, search, payments, etc.)
+Examples:
+•	Web server (e.g. Google.com)
+•	API server
+•	Email server
+•	Database server
+Real Example
+You visit https://example.com in your browser:
+•	Client = Your browser
+•	Server = example.com's web server
+•	Request = GET /index.html
+•	Response = HTML content of the homepage
+
+A client is the one that asks for something (like a web page or data).
+A server is the one that listens, processes, and delivers that something back.
+
+
+
